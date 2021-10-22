@@ -36,6 +36,12 @@ paths:
       parameters: []
       requestBody:
         $ref: '#/components/requestBodies/NewLead'
+  /account:
+    get:
+      summary: some
+      tags: []
+      responses: {}
+      operationId: get-account
 components:
   schemas:
     Lead:
