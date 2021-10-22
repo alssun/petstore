@@ -53,8 +53,8 @@ paths:
                 properties:
                   some:
                     type: string
-                  '':
-                    type: string
+                  newValue:
+                    type: number
       security:
         - petstore_auth:
             - 'write:pets'
