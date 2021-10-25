@@ -87,6 +87,10 @@ components:
                 type: string
               phone:
                 type: integer
+              some:
+                type: string
+              '':
+                type: string
         application/xml:
           schema:
             type: object
