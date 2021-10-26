@@ -119,6 +119,7 @@ components:
       content:
         application/json:
           schema:
+            type: object
             properties:
               id:
                 type: integer
@@ -130,6 +131,25 @@ components:
                 type: string
               phone:
                 type: integer
+              links:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    ref:
+                      type: string
+                    url:
+                      type: string
+          examples:
+            example-1:
+              id: 0
+              public_id: string
+              name: string
+              email: string
+              phone: 0
+              links:
+                - ref: string
+                  url: string
   examples:
     newLead:
       value:
