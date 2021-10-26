@@ -36,44 +36,47 @@ paths:
       parameters: []
       requestBody:
         $ref: '#/components/requestBodies/NewLead'
-  /account:
-    get:
-      summary: some
-      tags: []
-      responses: {}
-      operationId: get-account
 components:
   schemas:
     Lead:
-      type: object
       xml:
         name: Pet
       x-examples:
         An Lead:
           $ref: '#/components/examples/newLead'
-      properties:
-        id:
-          type: integer
-          nullable: true
-        publicId:
-          type: string
-          nullable: true
-        name:
-          type: string
-          example: doggie
-        email:
-          type: string
-        phone:
-          xml:
-            name: photoUrl
-            wrapped: true
-          type: integer
-      required:
-        - name
-        - phone
       x-internal: false
       title: ''
       description: ''
+      anyOf:
+        - properties:
+            id:
+              type: integer
+              nullable: true
+            publicId:
+              type: string
+              nullable: true
+            name:
+              type: string
+              example: doggie
+            email:
+              type: string
+            phone:
+              xml:
+                name: photoUrl
+                wrapped: true
+              type: integer
+            '':
+              type: object
+              properties:
+                id:
+                  type: string
+                '':
+                  type: string
+          required:
+            - name
+            - email
+            - phone
+      type: object
   requestBodies:
     NewLead:
       content:
@@ -88,8 +91,6 @@ components:
               phone:
                 type: integer
               some:
-                type: string
-              '':
                 type: string
         application/xml:
           schema:
